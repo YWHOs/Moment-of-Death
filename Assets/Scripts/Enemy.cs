@@ -16,6 +16,7 @@ public class Enemy : MonoBehaviour
 
     public void Damage(int _damage)
     {
+        BroadcastMessage("TakeDamage");
         health -= _damage;
 
         if(health <= 0)

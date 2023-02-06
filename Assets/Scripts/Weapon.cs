@@ -10,17 +10,24 @@ public class Weapon : MonoBehaviour
 
     [SerializeField] ParticleSystem particleShoot;
     [SerializeField] GameObject particleHit;
+    Ammo ammo;
+    void Start()
+    {
+        ammo = GetComponentInParent<Ammo>();
+    }
     // Update is called once per frame
     void Update()
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            Shoot();
+            if(ammo.CurrentAmmo() > 0)
+                Shoot();
         }
     }
 
     void Shoot()
     {
+        ammo.ReduceAmmo();
         particleShoot.Play();
         RaycastHit hit;
         if (Physics.Raycast(camera.transform.position, camera.transform.forward, out hit, range))
