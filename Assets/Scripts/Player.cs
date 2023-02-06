@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
         playerHealth -= _damage;
         if(playerHealth <= 0)
         {
-
+            GetComponent<DeathHandler>().IfDead();
         }
     }
 }

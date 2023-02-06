@@ -7,6 +7,7 @@ public class EnemyAI : MonoBehaviour
 {
     [SerializeField] Transform target;
     [SerializeField] float chaseRange;
+    [SerializeField] float rotateSpeed;
 
     NavMeshAgent naveMeshAgent;
     float distanceTarget = Mathf.Infinity;
@@ -36,6 +37,7 @@ public class EnemyAI : MonoBehaviour
 
     void EngageTarget()
     {
+        Rotate();
         // Chase
         if (distanceTarget >= naveMeshAgent.stoppingDistance)
         {
@@ -60,4 +62,10 @@ public class EnemyAI : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, chaseRange);
     }
 
+    void Rotate()
+    {
+        Vector3 direction = (target.position - transform.position).normalized;
+        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0f, direction.z));
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * rotateSpeed);
+    }
 }
