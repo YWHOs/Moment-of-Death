@@ -4888,6 +4888,7 @@ GameObject:
   - component: {fileID: 5107730810234728657}
   - component: {fileID: 5107730810233598481}
   - component: {fileID: 402019375445032384}
+  - component: {fileID: 7976197538316489353}
   m_Layer: 0
   m_Name: Carbine
   m_TagString: Untagged
@@ -4978,10 +4979,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 0}
-  range: 100
+  range: 50
   damage: 30
+  delay: 0.5
   particleShoot: {fileID: 4442518492447787864}
   particleHit: {fileID: 1766814854480755888, guid: d1c1b7443e7164e4ca1cc4f97ea48fc2, type: 3}
+--- !u!114 &7976197538316489353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5107730810235530449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fc6870d61305c14c838d556452f1c68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoomIn: 20
+  zoomOut: 60
+  zoomInSensitivity: 0.5
+  zoomOutSensitivity: 2
 --- !u!1 &5107730810235530451
 GameObject:
   m_ObjectHideFlags: 0

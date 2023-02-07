@@ -349,9 +349,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 0}
-  range: 100
-  damage: 30
-  particleShoot: {fileID: 0}
+  range: 40
+  damage: 15
+  delay: 0.2
+  particleShoot: {fileID: 5895876764320590234}
   particleHit: {fileID: 1766814854480755888, guid: d1c1b7443e7164e4ca1cc4f97ea48fc2, type: 3}
 --- !u!1 &2337074158997199752
 GameObject:
@@ -694,5 +695,10 @@ PrefabInstance:
 --- !u!4 &5586700050711776981 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3350055855090824723, guid: 4f8aeb8425cd6bd4e8ced6693ab40fea, type: 3}
+  m_PrefabInstance: {fileID: 7204132219750906054}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &5895876764320590234 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 3614249443508621660, guid: 4f8aeb8425cd6bd4e8ced6693ab40fea, type: 3}
   m_PrefabInstance: {fileID: 7204132219750906054}
   m_PrefabAsset: {fileID: 0}

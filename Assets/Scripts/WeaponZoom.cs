@@ -16,32 +16,45 @@ public class WeaponZoom : MonoBehaviour
     RigidbodyFirstPersonController rbc;
     void Start()
     {
-        camera = GetComponentInChildren<Camera>();
-        rbc = GetComponent<RigidbodyFirstPersonController>();
+        camera = GetComponentInParent<Camera>();
+        rbc = GetComponentInParent<RigidbodyFirstPersonController>();
     }
     void Update()
     {
         Zoom();
     }
+    private void OnDisable()
+    {
+        ZoomOut();
+    }
     void Zoom()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse1))
+        if (Input.GetMouseButtonDown(1))
         {
             if (!isZoom)
             {
-                isZoom = true;
-                camera.fieldOfView = zoomIn;
-                rbc.mouseLook.XSensitivity = zoomInSensitivity;
-                rbc.mouseLook.YSensitivity = zoomInSensitivity;
+                ZoomIn();
             }
             else
             {
-                isZoom = false;
-                camera.fieldOfView = zoomOut;
-                rbc.mouseLook.XSensitivity = zoomOutSensitivity;
-                rbc.mouseLook.YSensitivity = zoomOutSensitivity;
+                ZoomOut();
             }
         }
     }
 
+    private void ZoomOut()
+    {
+        isZoom = false;
+        camera.fieldOfView = zoomOut;
+        rbc.mouseLook.XSensitivity = zoomOutSensitivity;
+        rbc.mouseLook.YSensitivity = zoomOutSensitivity;
+    }
+
+    private void ZoomIn()
+    {
+        isZoom = true;
+        camera.fieldOfView = zoomIn;
+        rbc.mouseLook.XSensitivity = zoomInSensitivity;
+        rbc.mouseLook.YSensitivity = zoomInSensitivity;
+    }
 }
