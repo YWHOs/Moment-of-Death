@@ -12,16 +12,23 @@ public class EnemyAI : MonoBehaviour
     NavMeshAgent naveMeshAgent;
     float distanceTarget = Mathf.Infinity;
     bool isAngry;
+    Enemy enemy;
 
     // Start is called before the first frame update
     void Start()
     {
         naveMeshAgent = GetComponent<NavMeshAgent>();
+        enemy = GetComponent<Enemy>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (enemy.IsDead())
+        {
+            this.enabled = false;
+            naveMeshAgent.enabled = false;
+        }
         distanceTarget = Vector3.Distance(target.position, transform.position);
 
         if (isAngry)

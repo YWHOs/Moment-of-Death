@@ -9,6 +9,9 @@ public class Enemy : MonoBehaviour
     Player target;
     [SerializeField] int damage;
 
+    bool isDead;
+    public bool IsDead() { return isDead; }
+
     void Start()
     {
         target = FindObjectOfType<Player>();
@@ -21,7 +24,9 @@ public class Enemy : MonoBehaviour
 
         if(health <= 0)
         {
-            Destroy(gameObject);
+            if (isDead) return;
+            isDead = true;
+            GetComponent<Animator>().SetTrigger("Die");
         }
     }
 
