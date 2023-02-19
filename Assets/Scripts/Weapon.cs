@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Weapon : MonoBehaviour
 {
@@ -8,11 +9,13 @@ public class Weapon : MonoBehaviour
     [SerializeField] float range;
     [SerializeField] int damage;
     [SerializeField] float delay;
+    [SerializeField] TextMeshProUGUI ammoText;
 
     [SerializeField] ParticleSystem particleShoot;
     [SerializeField] GameObject particleHit;
-    Ammo ammo;
     [SerializeField] AmmoType ammoType;
+    Ammo ammo;
+
 
     bool canShoot = true;
 
@@ -27,12 +30,18 @@ public class Weapon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        AmmoUI();
         if (Input.GetButtonDown("Fire1") && canShoot)
         {
             StartCoroutine(Shoot());
         }
     }
 
+    void AmmoUI()
+    {
+        int currentAmmo = ammo.CurrentAmmo(ammoType);
+        ammoText.text = currentAmmo.ToString();
+    }
     IEnumerator Shoot()
     {
         canShoot = false;

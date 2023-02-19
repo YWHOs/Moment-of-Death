@@ -5,11 +5,11 @@ using UnityEngine.AI;
 
 public class EnemyAI : MonoBehaviour
 {
-    [SerializeField] Transform target;
     [SerializeField] float chaseRange;
     [SerializeField] float rotateSpeed;
 
     NavMeshAgent naveMeshAgent;
+    Transform target;
     float distanceTarget = Mathf.Infinity;
     bool isAngry;
     Enemy enemy;
@@ -19,6 +19,7 @@ public class EnemyAI : MonoBehaviour
     {
         naveMeshAgent = GetComponent<NavMeshAgent>();
         enemy = GetComponent<Enemy>();
+        target = FindObjectOfType<Player>().transform;
     }
 
     // Update is called once per frame

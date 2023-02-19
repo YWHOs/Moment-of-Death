@@ -34,5 +34,6 @@ public class Enemy : MonoBehaviour
     {
         if (target == null) return;
         target.GetDamage(damage);
+        target.GetComponent<SplatterUI>().ShowImage();
     }
 }

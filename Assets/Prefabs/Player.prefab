@@ -15,9 +15,10 @@ GameObject:
   - component: {fileID: 3850539323158816867}
   - component: {fileID: 5885041674534047476}
   - component: {fileID: 5885041674534047464}
+  - component: {fileID: 543276378015678122}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -174,7 +175,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad2c6f8b300b1204e85061e9ae5eb680, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammoSlots: []
+  ammoSlots:
+  - ammoType: 0
+    ammoAmount: 10
+  - ammoType: 1
+    ammoAmount: 20
+  - ammoType: 2
+    ammoAmount: 8
+--- !u!114 &543276378015678122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 308926114350320600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5194cf6e1586c24da99238a3b26192d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  splatter: {fileID: 0}
+  delay: 0.3
 --- !u!1 &308926114350320602
 GameObject:
   m_ObjectHideFlags: 0
@@ -398,9 +419,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 308926114350684158}
     m_Modifications:
+    - target: {fileID: 3224576228889782731, guid: b08ea34ebf3807743ac86d71163392ac, type: 3}
+      propertyPath: angle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3224576228889782731, guid: b08ea34ebf3807743ac86d71163392ac, type: 3}
+      propertyPath: lighting
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3224576228889782731, guid: b08ea34ebf3807743ac86d71163392ac, type: 3}
+      propertyPath: minimumAngle
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 4311365951629983194, guid: b08ea34ebf3807743ac86d71163392ac, type: 3}
       propertyPath: m_Name
-      value: Spot Light
+      value: Flashlight
       objectReference: {fileID: 0}
     - target: {fileID: 6737875289529170017, guid: b08ea34ebf3807743ac86d71163392ac, type: 3}
       propertyPath: m_RootOrder

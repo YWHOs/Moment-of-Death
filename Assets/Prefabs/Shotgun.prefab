@@ -352,8 +352,10 @@ MonoBehaviour:
   range: 10
   damage: 60
   delay: 1.5
+  ammoText: {fileID: 0}
   particleShoot: {fileID: 5768547314215258532}
   particleHit: {fileID: 1766814854480755888, guid: d1c1b7443e7164e4ca1cc4f97ea48fc2, type: 3}
+  ammoType: 1
 --- !u!1 &2337074158997199752
 GameObject:
   m_ObjectHideFlags: 0
